@@ -14,7 +14,7 @@ bindViewModel()
 
 1.自己所需要的数据
 
-```
+```kotlin
 data class VmBean (
     var name:String,
     var uid:Int
@@ -25,7 +25,7 @@ data class VmBean (
 
 2.ViewModel中监听的数据
 
-```
+```kotlin
 class MyViewModel : ViewModel() {
     val mData = MutableLiveData<Data<VmBean>>()
     fun refresh(tmp: Int) {
@@ -39,4 +39,18 @@ class MyViewModel : ViewModel() {
 ```
 
 
+
+3.使用
+
+```kotlin
+        private lateinit var mViewModel: MyViewModel
+...
+		mViewModel = bindViewModel()
+        mViewModel.mData.observe(this, Observer<Data<VmBean>> {
+            it?.data?.let { bean -> toast(bean.toString()) }
+            it?.msg?.let { m -> toast(m) }
+        })
+...
+
+```
 
