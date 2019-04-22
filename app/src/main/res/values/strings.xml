@@ -2,4 +2,7 @@
     <string name="app_name">JxdUtil</string>
     <string name="viewmodel_string">ViewModel测试</string>
     <string name="vm_refresh">刷新</string>
+    <string name="intent_jxd_core">跳转Intent</string>
+    <string name="sp_string">保存SharedPreferences</string>
+    <string name="sharedpreferences">获取SharedPreferences</string>
 </resources>

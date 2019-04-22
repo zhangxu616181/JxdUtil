@@ -16,4 +16,12 @@
             android:text="@string/viewmodel_string"
     />
 
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/mViewModel"
+            android:id="@+id/mJxdCore"
+            android:text="@string/intent_jxd_core"
+    />
 </androidx.constraintlayout.widget.ConstraintLayout>
