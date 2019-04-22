@@ -32,7 +32,7 @@ newActivity<CoreActivity>()
 
 
 
-### sharedPreferences
+### SharedPreferences工具类
 
 默认情况下启用默认的sharedPreferences，默认文件名 "App_Config"，默认类型Context.MODE_PRIVATE
 

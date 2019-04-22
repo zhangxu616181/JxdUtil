@@ -3,6 +3,31 @@
 
 
 
+### 引用
+
+项目的build.gradle
+
+```groovy
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+
+model的build.gradle
+
+```groovy
+	dependencies {
+	        implementation 'com.github.AlfredjinAndroid:JxdUtil:v0.01'
+	}
+```
+
+
+
+
+
 ### 基础工具
 
 [基础工具](https://github.com/AlfredjinAndroid/JxdUtil/blob/master/jxd_core/README.md)
