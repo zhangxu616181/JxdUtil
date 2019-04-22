@@ -20,7 +20,7 @@ model的build.gradle
 
 ```groovy
 	dependencies {
-	        implementation 'com.github.AlfredjinAndroid:JxdUtil:v0.01'
+	        implementation 'com.github.AlfredjinAndroid:JxdUtil:v1.02'
 	}
 ```
 
