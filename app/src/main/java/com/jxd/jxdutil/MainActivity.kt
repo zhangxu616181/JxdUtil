@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.jxd.jxd_core.base.isEmpty
+import com.jxd.jxd_core.base.orNotEmpty
 import com.jxd.jxd_core.intent.openActivity
 import com.jxd.jxdutil.jxd_core.CoreActivity
 import com.jxd.jxdutil.view_model.VMTestActivity
@@ -23,5 +25,13 @@ class MainActivity : AppCompatActivity() {
     private fun initListener() {
         mViewModel.setOnClickListener { startActivity(Intent(mContext, VMTestActivity::class.java)) }
         mJxdCore.setOnClickListener { openActivity<CoreActivity>("p" to "data", "p2" to 30, "p3" to true) }
+    }
+
+    private fun test(){
+        "" isEmpty {
+
+        } orNotEmpty {
+
+        }
     }
 }
