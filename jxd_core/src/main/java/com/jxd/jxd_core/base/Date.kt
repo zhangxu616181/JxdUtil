@@ -84,10 +84,10 @@ fun stringToDate(time: String, timeType: String): Date? {
  */
 fun stringToLong(time: String, timeType: String): Long {
     val date = stringToDate(time, timeType)
-    if (date == null) {
-        return 0
+    return if (date == null) {
+        0
     } else {
-        return dateToLong(date)
+        dateToLong(date)
     }
 
 }
