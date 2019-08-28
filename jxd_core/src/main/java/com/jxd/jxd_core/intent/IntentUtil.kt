@@ -13,30 +13,50 @@ import java.io.Serializable
  */
 
 inline fun <reified T : Activity> Activity.openActivity(vararg pair: Pair<String, Any>) {
-    gotoActivity<T>(false, *pair)
+    gotoActivity<T>(false, pair = *pair)
 }
 
 inline fun <reified T : Activity> Activity.openActivityFinish(vararg pair: Pair<String, Any>) {
-    gotoActivity<T>(false, *pair)
+    gotoActivity<T>(false, pair = *pair)
     finish()
 }
 
 inline fun <reified T : Activity> Context.toActivity(vararg pair: Pair<String, Any>) {
-    gotoActivity<T>(false, *pair)
+    gotoActivity<T>(false, pair = *pair)
 }
 
 inline fun <reified T : Activity> Context.startActivity(vararg pair: Pair<String, Any>) {
-    gotoActivity<T>(false, *pair)
+    gotoActivity<T>(isNew = false, isClear = false, pair = *pair)
 }
 
+/**
+ * 一般用于启动一个新的Activity(非当前栈内使用)
+ */
 inline fun <reified T : Activity> Context.newActivity(vararg pair: Pair<String, Any>) {
-    gotoActivity<T>(true, *pair)
+    gotoActivity<T>(isNew = true, isClear = false, pair = *pair)
 }
 
-inline fun <reified T> Context.gotoActivity(isNew: Boolean, vararg pair: Pair<String, Any>) {
+/**
+ * 清空栈
+ * 一般用于退出登录时
+ * 防止栈内其他Activity错乱问题
+ */
+inline fun <reified T> Context.openActivityClearTask(vararg pair: Pair<String, Any>) {
+    gotoActivity<T>(isNew = true, isClear = true, pair = *pair)
+}
+
+inline fun <reified T> Context.gotoActivity(
+    isNew: Boolean,
+    isClear: Boolean = false,
+    vararg pair: Pair<String, Any>
+) {
     val intent = Intent(this, T::class.java)
     if (isNew) {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    }
+    if (isClear) {
+        //清空栈
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
     }
     pair.forEach { intent.putExt(it.first, it.second) }
     startActivity(intent)
