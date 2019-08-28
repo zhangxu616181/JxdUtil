@@ -34,35 +34,11 @@ const val Y_Y = "yyyy"
 const val M_M = "MM"
 
 /**
- * long转String
- *
- * @param times
- * @param timeType
- * @return
- */
-@SuppressLint("SimpleDateFormat")
-fun longToString(times: Long, timeType: String): String {
-    val sdf = SimpleDateFormat(timeType)
-    return sdf.format(times)
-}
-
-fun dateFormat(date: String): String {
-    val split = date.split("-")
-    val year: String = split[0]
-    val monthInt = split[1].toInt()
-    val month: String = if (monthInt < 10) "0$monthInt" else "$monthInt"
-    val dayInt = split[2].toInt()
-    val day: String = if (dayInt < 10) "0$dayInt" else "$dayInt"
-    return "$year-$month-$day"
-}
-
-/**
  * date类型转为Long
  */
 fun dateToLong(date: Date): Long {
     return date.time
 }
-
 
 /**
  * String类型转Date类型
@@ -78,7 +54,6 @@ fun stringToDate(time: String, timeType: String): Date? {
     return date
 }
 
-
 /**
  * 日期 String  转 Long
  */
@@ -91,6 +66,7 @@ fun stringToLong(time: String, timeType: String): Long {
     }
 
 }
+
 
 
 //////////////////////////////////////////////////////
