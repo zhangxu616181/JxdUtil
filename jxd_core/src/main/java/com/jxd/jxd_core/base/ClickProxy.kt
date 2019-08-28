@@ -24,5 +24,8 @@ class ClickProxy() : View.OnClickListener {
             mLastClick = mCurrentTime
         }
     }
+}
 
+fun View.clickProxy(l: ((View) -> Unit)) {
+    this.setOnClickListener(ClickProxy(l))
 }
