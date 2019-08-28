@@ -15,3 +15,14 @@ infix fun String.orNotEmpty(block: String.() -> Unit){
         block()
     }
 }
+
+//
+//
+//infix fun String.isPhoneNumber(block: String.() -> Unit):String{
+//    if (true) block()
+//    return this
+//}
+//
+//infix fun String.orNotPhoneNumber(block: String.() -> Unit){
+//    if ()
+//}
