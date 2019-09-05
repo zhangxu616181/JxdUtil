@@ -31,6 +31,12 @@ model的build.gradle
 ### 基础工具
 
 [基础工具](https://github.com/AlfredjinAndroid/JxdUtil/blob/master/jxd_core/README.md)
+常用用于基础工具
+View : CameraView
+     : FaceView
+     : NameView
+     : TimeView
+
 
 
 
